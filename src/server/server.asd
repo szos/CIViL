@@ -8,6 +8,9 @@
   :serial t
   :depends-on (:alexandria
 	       :cl-ppcre
-	       :bt-semaphore)
+	       :bt-semaphore
+	       :usocket
+	       :cl-async
+	       :cl-async-ssl)
   :components ((:file "package")
 	       (:file "server")))
