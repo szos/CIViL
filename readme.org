@@ -1,5 +1,4 @@
 #+TITLE: CIViL
-#+AUTHOR: Naomi 
 * Description
   CIViL is an implementation of the strategy game Civ in Common Lisp. This system provides the logic of the game itself alongside a client/server architecture. Clients are responsible for any graphical representations, with one exception: A webserver would be a useful interface, and using some sort of image drawing program we could generate graphical representations each turn in the form of a PNG, and send that to the appropriate player. 
 * Systems and Subsystems
