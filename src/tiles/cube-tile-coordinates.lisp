@@ -100,12 +100,12 @@
       )))
 
 (defparameter *directions*
-  '((1 -1 0)
-    (1 0 -1)
-    (0 1 -1)
-    (-1 1 0)
-    (-1 0 1)
-    (0 -1 1)))
+  '((east . (1 -1 0))
+    (northeast . (1 0 -1))
+    (northwest . (0 1 -1))
+    (west . (-1 1 0))
+    (southwest . (-1 0 1))
+    (southeast . (0 -1 1))))
 
 ;; (defun make-board (radius)
 ;;   (make-array (list radius radius radius)))

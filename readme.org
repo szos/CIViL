@@ -1,11 +1,25 @@
 #+TITLE: CIViL
-#+AUTHOR: Naomi 
 * Description
   CIViL is an implementation of the strategy game Civ in Common Lisp. This system provides the logic of the game itself alongside a client/server architecture. Clients are responsible for any graphical representations, with one exception: A webserver would be a useful interface, and using some sort of image drawing program we could generate graphical representations each turn in the form of a PNG, and send that to the appropriate player. 
 * Systems and Subsystems
+  Work is currently underway to convert from a directional system to a coordinate system. Once this is completed it will be added and work will resume on the rest of the game. 
 ** CIV
    The main system is just called ~civ~, and is the only thing one should be interacting with. It will provide an interface to all subsystems. 
 ** TILE
    The tile subsystem organizes our representation of the map. It is depended upon by most other systems, either explicitly or via another subsystem. 
 ** GAME
    The game subsystem organizes the representation of games, each with their own thread pool and state. This system depends on the subsystems tile, player, and server.
+** PLAYER
+   The player subsystem provides a generic function interface for interacting with a player. This protocol should allow one to send and recieve messages from a player/client. 
+** SERVER
+   The server subsystem provides a server that will run 
+* Creating Content
+  One of the CIViL design philosophies is allowing users to create their own content. Tiles, Units, Leaders, even different games! (ok that last one may be impractical). 
+** Defining Tiles
+   Tiles are defined via a set of macros, which generate the appropriate methods alongside the class. In order to define tiles we first must understand how they're ordered. A tile is,  at its core, a collection of mixins. The mixins are ordered automatically by the tile binding system - the only thing one need to do is define the appropriate type of mixin. 
+*** Tile Root Types
+    The root type of a tile is the general environment of the tile. Each root type needs a warmth value, ranging from 0-4, while each root type that is on land requires a minimum and maximum wetness. These values are used in map generation. 
+    #+NAME: tile-root-types-examples
+    #+BEGIN_SRC common-lisp
+      (define-tile-root name &optional (superclasses '(land-tile)) slots &body options) 
+    #+END_SRC

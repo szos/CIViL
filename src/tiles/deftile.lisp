@@ -174,6 +174,13 @@
 			 collect `(define-mixin ,@(cdr o)))
 	       (push (cons name a) *allowed-features*)))))))
 
+; (define-feature marsh (:food 1 :defense -2 :adjacent-appeal -2) )
+
+; (define-tile grassland (:food 2)
+;   (:documentation "grassland tile"))
+
+; (define-tile )
+
 ;; (define-tile grassland (:food 2)
 ;;   (:documentation "grassland tile, increases food by 2")
 ;;   (:tile-features hilly (woods))
@@ -193,3 +200,4 @@
 ;;      (print ',bod)))
 
 ;; (test-args n (:x 2) x y)
+
