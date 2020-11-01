@@ -1,7 +1,7 @@
 #+TITLE: CIViL
 
 * NOTICE:
-  CIViL started as an idea between me and a friend. As I dont have time to work on this, she will be the only one of us working on this and will be going in the same direction, but with some different organizational ideas and in a different repo. This repo should be considered a small archive of the tiny ammount of work I did fleshing this out, and her repo should be considered canonical. 
+  CIViL started as an idea between me and a friend. As I dont have time to work on this, she will be the only one of us working on this and will be going in the same direction, but with some different organizational ideas and in a different repo. This repo should be considered a small archive of the tiny ammount of work I did fleshing this out, and her repo should be considered canonical. The new repo is at =gitlab.com/mairind/civil=. 
 
 * Description
   CIViL is an implementation of the strategy game Civ in Common Lisp. This system provides the logic of the game itself alongside a client/server architecture. Clients are responsible for any graphical representations, with one exception: A webserver would be a useful interface, and using some sort of image drawing program we could generate graphical representations each turn in the form of a PNG, and send that to the appropriate player. 
